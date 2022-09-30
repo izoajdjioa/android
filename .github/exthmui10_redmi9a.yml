@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: exthmui10_redmi9a
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "exthm-12" branch
+  push:
+    branches: [ "exthm-10-china" ]
+  pull_request:
+    branches: [ "exthm-10-china" ]
+
+  workflow_dispatch:
+jobs:
+ 环境
+    name:get
+ 编译
+    name:run
+    need: 环境
+    
+  build:
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo Hello, world!
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+
+ of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
